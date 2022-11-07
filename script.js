@@ -96,7 +96,11 @@ console.log('the checking of the grades is :', over70);
 //console.log('the phenomenon are :', phenomenon);
 
 // => second way
-let phenomenon = students.filter(element => over70.includes(element) && element.id > 120);
+//let phenomenon = students.filter(element => over70.includes(element) && element.id > 120);
+//console.log('the phenomenon are :', phenomenon);
+
+//=> third way
+let phenomenon = over70.filter(element => element.id > 120);
 console.log('the phenomenon are :', phenomenon);
 
-
+   
