@@ -59,9 +59,15 @@ let students = [
     { name: 'Piero', id: 102, grades: 50 },
     { name: 'Francesca', id: 120, grades: 84 },
   ];
-1- Dobbiamo creare delle targhe con il loro nome in maiuscolo. Ci serve quindi un nuovo array di stringhe. Ogni elemento del nuovo array sarà il nome dello studente ma con tutte le lettere maiuscole.
-2-  Dobbiamo creare un nuovo array con gli studenti che hanno un totale di voti superiore a 70
-3-  Dobbiamo creare un nuovo array di tutti gli studenti che hanno un totale di voti superiore a 70 e id superiore a 120
+1- Dobbiamo creare delle targhe con il loro nome in maiuscolo. Ci serve quindi un 
+nuovo array di stringhe. Ogni elemento del nuovo array sarà il 
+nome dello studente ma con tutte le lettere maiuscole.
+
+2-  Dobbiamo creare un nuovo array con gli studenti che 
+hanno un totale di voti superiore a 70
+
+3-  Dobbiamo creare un nuovo array di tutti gli studenti che 
+hanno un totale di voti superiore a 70 e id superiore a 120
 */
 
 let students = [
@@ -74,7 +80,7 @@ let students = [
     { name: 'Francesca', id: 120, grades: 84 },
   ];
 
-  //first point
+  //first point => to remember ... it doesn't work with .filter(), while thi .forEach() you need to push !!
 let upperCaseName = students.map((element) => {
     return element.name.toUpperCase();
 });
@@ -82,5 +88,11 @@ let upperCaseName = students.map((element) => {
 console.log('upperCase array is :', upperCaseName);
 
 //second point
-let checkGrades = students.filter(student => student.grades > 70);
-console.log('the checking of the grades is :', checkGrades);
+let over70 = students.filter(element => element.grades > 70);
+console.log('the checking of the grades is :', over70);
+
+//third point => first way
+let phenomenon = students.filter(element => element.grades > 70 && element.id > 120);
+console.log('the phenomenon are :', phenomenon);
+
+
