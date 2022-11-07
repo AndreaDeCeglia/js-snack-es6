@@ -17,6 +17,14 @@ let inputMax = parseInt(prompt('write the maximum number: '));
 if ( inputMin<0 || inputMax>myArray.length - 1){
     alert('write a number between 0 and 5');
 } else {
+    //withForEach();
+    withFilter();
+}
+
+console.log(newArray);
+
+// solution with forEach
+function withForEach(){
     myArray.forEach((element, index) =>{
         if ( index >= inputMin && index <= inputMax ){
             newArray.push(element);
@@ -26,4 +34,15 @@ if ( inputMin<0 || inputMax>myArray.length - 1){
     })
 }
 
-console.log(newArray);
+//solution with filter
+function withFilter(){
+    newArray = myArray.filter((element, index) =>{
+        if ( index >= inputMin && index <= inputMax ){
+            return true;
+        } else{
+            return false;
+        }
+    })
+    //console.log('element', element);
+    console.log(newArray);
+}
