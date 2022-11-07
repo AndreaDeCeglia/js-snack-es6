@@ -74,8 +74,13 @@ let students = [
     { name: 'Francesca', id: 120, grades: 84 },
   ];
 
-  let upperCaseName = students.map((element) => {
+  //first point
+let upperCaseName = students.map((element) => {
     return element.name.toUpperCase();
-  });
+});
 
-  console.log('upperCase array is :', upperCaseName);
+console.log('upperCase array is :', upperCaseName);
+
+//second point
+let checkGrades = students.filter(student => student.grades > 70);
+console.log('the checking of the grades is :', checkGrades);
