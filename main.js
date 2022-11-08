@@ -71,7 +71,7 @@ lightestFinder();
  * ******************* fourth snack *****************************************************
  ///********************************************************************************** */
 
- const teams = [
+ let football_team = [
     {
         nome: "Milan",
         points: 0,
@@ -99,6 +99,8 @@ lightestFinder();
     },
 ]
 
+console.log(football_team);
+
 
 //global var
 const maxpoints = 10;
@@ -116,3 +118,12 @@ function randomNumber() {
     console.log(football_team);
 }
 
+
+function newArray(){
+    for (let i = 0; i < football_team.length; i++){
+        let {name, fouls} = football_team[i];
+        let obj = {...football_team.name, name, fouls};
+        info.push(obj);
+    }
+    console.log(info);
+}
