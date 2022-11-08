@@ -65,3 +65,54 @@ function lightestFinder(){
 }
 
 lightestFinder();
+
+
+/****************************************************************************************
+ * ******************* fourth snack *****************************************************
+ ///********************************************************************************** */
+
+ const teams = [
+    {
+        nome: "Milan",
+        points: 0,
+        fouls: 0
+    },
+    {
+        nome: "Inter",
+        points: 0,
+        fouls: 0
+    },
+    {
+        nome: "Juve",
+        points: 0,
+        fouls: 0
+    },
+    {
+        nome: "Atalanta",
+        points: 0,
+        fouls: 0
+    },
+    {
+        nome: "Roma",
+        points: 0,
+        fouls: 0
+    },
+]
+
+
+//global var
+const maxpoints = 10;
+const maxfouls = 5;
+let info = []; 
+
+
+function randomNumber() {
+    for (let i = 0; i < football_team.length; i++) {
+        let rnpoint = Math.round(Math.random() * maxpoints);
+        let rnfouls = Math.round(Math.random() * maxfouls);
+        football_team[i].points = rnpoint;
+        football_team[i].fouls = rnfouls;
+    }
+    console.log(football_team);
+}
+
