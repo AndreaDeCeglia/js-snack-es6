@@ -91,6 +91,10 @@ console.log('upperCase array is :', upperCaseName);
 let over70 = students.filter(element => element.grades > 70);
 console.log('the checking of the grades is :', over70);
 
+//seen in class
+let destruttur = students.filter( ( { grades } ) => grades > 70);
+console.log('destrutturizzazione è :', destruttur);
+
 //third point => first way
 //let phenomenon = students.filter(element => element.grades > 70 && element.id > 120);
 //console.log('the phenomenon are :', phenomenon);
@@ -102,5 +106,9 @@ console.log('the checking of the grades is :', over70);
 //=> third way
 let phenomenon = over70.filter(element => element.id > 120);
 console.log('the phenomenon are :', phenomenon);
+
+//fourth way
+let destrutturID = over70.filter( ( { id } ) => id > 120);
+console.log('destrutturizzazione è :', destrutturID);
 
    
