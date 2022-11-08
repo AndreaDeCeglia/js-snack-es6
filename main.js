@@ -9,7 +9,7 @@ destructuring e template literal
 
 
 //global variable
-let limit = 1000;
+let limit = 100;
 let lightest;
 
 
@@ -32,8 +32,17 @@ let bike = [
     }
 ];
 
+console.log(`bike's array :`, bike)
+
 //loop for checking the array's objs
 for( let i=0; i < bike.length; i++){
     //array's objs destructuring 
     let {name, kg} = bike[i];
+
+    if(kg < limit){
+        limit = kg;
+        lightest = name;
+    }
 }
+
+console.log(`lightest bike is ${lightest}, and it weights ${limit} kg !!`)
