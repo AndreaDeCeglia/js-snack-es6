@@ -7,12 +7,6 @@ Stampare a schermo la bici con peso minore utilizzando
 destructuring e template literal
 */
 
-
-//global variable
-let limit = 100;
-let lightest;
-
-
 let bike = [
     {
         name: "mountain_bike",
@@ -34,15 +28,40 @@ let bike = [
 
 console.log(`bike's array :`, bike)
 
-//loop for checking the array's objs
-for( let i=0; i < bike.length; i++){
-    //array's objs destructuring 
-    let {name, kg} = bike[i];
 
-    if(kg < limit){
-        limit = kg;
-        lightest = name;
-    }
+// //global variable
+// let limit = 100;
+// let lightest;
+
+
+// //loop for checking the array's objs
+// for( let i=0; i < bike.length; i++){
+//     //array's objs destructuring 
+//     let {name, kg} = bike[i];
+
+//     if(kg < limit){
+//         limit = kg;
+//         lightest = name;
+//     }
+// }
+
+// console.log(`lightest bike is ${lightest}, and it weights ${limit} kg !!`)
+
+//******SECOND WAY ******* */
+
+let weights = bike.map(({kg}) => console.log(kg));
+
+function lightestFinder(){
+    weights = bike.map((element) => element.kg);
+    console.log(`weights are :`, weights);
+
+    let minWeight = Math.min(...weights);
+    console.log(`the minWeight is :`, minWeight);
+
+    let lightest = bike.filter(({element, kg}) => kg === minWeight)
+    console.log(`the lightest is :`, lightest);
+
+    document.getElementById('result').innerHTML = `the lightest is ${lightest.nome}, that weights ${lightest.kg} kg !!`
 }
 
-console.log(`lightest bike is ${lightest}, and it weights ${limit} kg !!`)
+lightestFinder();
